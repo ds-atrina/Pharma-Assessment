@@ -1,0 +1,6 @@
+venv/
+.venv/
+.env
+test.json
+__pycache__/
+*.py[cod]

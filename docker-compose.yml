@@ -1,0 +1,16 @@
+version: '3.8'                                # Compose file format (v3.8+) :contentReference[oaicite:0]{index=0}
+
+services:
+  streamlit:
+    container_name: pharma-assessment         # optional friendly name
+    build:
+      context: .                              # use Dockerfile in this directory :contentReference[oaicite:1]{index=1}
+      dockerfile: Dockerfile
+    image: my-streamlit-app:latest            # tag for pushed image
+    ports:
+      - "8501:8501"                           # host:container port mapping :contentReference[oaicite:2]{index=2}
+    env_file:
+      - .env                                  # load GEMINI_API_KEY, other vars :contentReference[oaicite:3]{index=3}
+    volumes:
+      - ./accounts_key.json:/app/accounts_key.json:ro   # mount credentials read‑only :contentReference[oaicite:4]{index=4}
+    restart: unless-stopped                   # auto‑restart policy

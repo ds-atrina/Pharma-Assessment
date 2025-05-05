@@ -12,5 +12,5 @@ services:
     env_file:
       - .env                                  # load GEMINI_API_KEY, other vars :contentReference[oaicite:3]{index=3}
     volumes:
-      - ./accounts_key.json:/app/accounts_key.json:ro   # mount credentials read‑only :contentReference[oaicite:4]{index=4}
+      - ./accounts_key.json:/app/test.json:ro   # mount credentials read‑only :contentReference[oaicite:4]{index=4}
     restart: unless-stopped                   # auto‑restart policy
